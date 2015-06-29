@@ -11,7 +11,7 @@ if (Posts.find().count() === 0) {
     profile: { name: 'Sacha Greif' }
   });
   var sacha = Meteor.users.findOne(sachaId);
-
+  
   var telescopeId = Posts.insert({
     title: 'Introducing Telescope',
     userId: sacha._id,
@@ -20,7 +20,7 @@ if (Posts.find().count() === 0) {
     submitted: new Date(now - 7 * 3600 * 1000),
     commentsCount: 2
   });
-
+  
   Comments.insert({
     postId: telescopeId,
     userId: tom._id,
@@ -28,7 +28,7 @@ if (Posts.find().count() === 0) {
     submitted: new Date(now - 5 * 3600 * 1000),
     body: 'Interesting project Sacha, can I get involved?'
   });
-
+  
   Comments.insert({
     postId: telescopeId,
     userId: sacha._id,
@@ -36,7 +36,7 @@ if (Posts.find().count() === 0) {
     submitted: new Date(now - 3 * 3600 * 1000),
     body: 'You sure can Tom!'
   });
-
+  
   Posts.insert({
     title: 'Meteor',
     userId: tom._id,
@@ -45,7 +45,7 @@ if (Posts.find().count() === 0) {
     submitted: new Date(now - 10 * 3600 * 1000),
     commentsCount: 0
   });
-
+  
   Posts.insert({
     title: 'The Meteor Book',
     userId: tom._id,
@@ -54,7 +54,7 @@ if (Posts.find().count() === 0) {
     submitted: new Date(now - 12 * 3600 * 1000),
     commentsCount: 0
   });
-
+  
   for (var i = 0; i < 10; i++) {
     Posts.insert({
       title: 'Test post #' + i,
